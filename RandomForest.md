@@ -32,7 +32,9 @@ So, the probability of classifying a data point as class1 at this node is 7/13 =
 Now consider the last node with 1 sample for which the class1 prediction probability would be 1/1 = 1.
 
 Mathematically Gini impurity can be defined as 
-$$I_{G}(n) = 1 - \sum_{i=1}^{k}(p_{i})^2 $$
+$$
+I_{G}(n) = 1 - \sum_{i=1}^{k}(p_{i})^2
+$$
 where, 
 
  - n = node
@@ -45,18 +47,28 @@ And this equation is trying to capturing the probability of any randomly selecte
 
 **Calculating Gini impurity:**
 At root node
-$$I_{root} = 1 - \left ( \left ( \frac{7}{13}  \right )^2  + \left ( \frac{6}{13}  \right )^2 \right ) = 0.497$$
+$$
+I_{root} = 1 - \left ( \left ( \frac{7}{13}  \right )^2  + \left ( \frac{6}{13}  \right )^2 \right ) = 0.497
+$$
 
 At node x <=0.45
-$$I_{left} = 1 - \left ( \left ( \frac{2}{6}  \right )^2  + \left ( \frac{4}{6}  \right )^2 \right ) = 0.444$$
+$$
+I_{left} = 1 - \left ( \left ( \frac{2}{6}  \right )^2  + \left ( \frac{4}{6}  \right )^2 \right ) = 0.444
+$$
 
 At node x <= 0.575
-$$I_{right} = 1 - \left ( \left ( \frac{5}{7}  \right )^2  + \left ( \frac{2}{7}  \right )^2 \right ) = 0.408$$
+$$
+I_{right} = 1 - \left ( \left ( \frac{5}{7}  \right )^2  + \left ( \frac{2}{7}  \right )^2 \right ) = 0.408
+$$
 
 So, overall gini impurity for second layer 
-$$I_{secondLayer} = \frac{n_{left}}{n_{root}} * I_{left} + \frac{n_{right}}{n_{root}} * I_{root} = 0.423 $$
+$$
+I_{secondLayer} = \frac{n_{left}}{n_{root}} * I_{left} + \frac{n_{right}}{n_{root}} * I_{root} = 0.423 
+$$
 
-$$ I_{secondLayer} < I_{root} $$
+$$
+I_{secondLayer} < I_{root} 
+$$
 
 Clearly, overall Gini impurity is decreasing from root to leaf nodes.
 
